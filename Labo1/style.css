@@ -1,0 +1,157 @@
+html,body{
+    height: 100%;
+    margin: 0;
+}
+
+body.index{
+    background-color:#230A2A;
+    font-family: 'Lobster', cursive;
+}
+
+
+.main-page{
+    height: 90%;
+    display:flex ;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+}
+.main-logo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#logo{
+    margin: auto;
+    width: 300px;
+    height:300px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.btn-commander{
+    background-color: transparent;
+    border: 4px solid white;
+    padding: 20px;
+    font-size: 40px;
+    margin: 10% 0%;
+    color: white;
+    border-radius: 50px;
+    outline:none;
+    cursor: pointer;
+    transition: 0.5s;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.btn-commander:hover{
+    color: yellow;
+    border: 4px solid yellow;
+    transition: 0.5s;
+}
+
+.site-banner{
+    height: 10%;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.site-banner p{
+    margin: 0px;
+}
+
+
+/* PAGE MENU */
+body.menu{
+    background-color: rgb(204, 143, 29);
+    font-family: 'Lobster', cursive;
+    
+}
+
+.menu-container h1{
+    font-size: 100px;
+    text-align: center;
+}
+
+.menu-content{
+    background-color:white;
+    text-align: center;
+    margin: 40px;
+    padding: 40px;
+}
+
+.menu-section{
+    border-bottom: solid black 4px;
+    font-size: 50px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+ul{
+    list-style: none;
+    padding :0;
+}
+
+.menu-items-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 0 16px;
+}
+
+.menu-items-list img{
+    width: 100%;
+    
+}
+.menu-items-list li button{
+background-color: transparent;
+border: 3px solid black;
+border-radius: 30px;
+padding: 10px;
+text-transform: none;
+outline: none;
+cursor: pointer;
+margin-bottom: 30px;
+}
+
+.menu-items-list li button:hover{
+    background-color: rgb(204, 143, 29);
+    transition: 0.3s;
+}
+
+.main-nav{
+    padding-left : 50px;
+    margin-top: 25px;
+}
+
+.main-nav a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 0 25px;
+}
+
+.main-nav a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+    .menu-items-list{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .btn-commander{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .menu-items-list{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .btn-commander{
+        font-size: 20px;
+    }
+}
