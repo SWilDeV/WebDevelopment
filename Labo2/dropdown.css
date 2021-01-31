@@ -1,0 +1,11 @@
+body{
+    background-color: pink;
+}
+
+.c-dropdown{
+    display:show;
+}
+
+.c-dropdown.hide{
+    display:none;
+}
