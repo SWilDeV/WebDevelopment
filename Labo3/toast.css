@@ -1,0 +1,46 @@
+.toast-container {
+  position: fixed;
+  bottom: 0;
+  right: 32px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.toast {
+  width: 300px;
+  padding: 16px;
+  font-size: 18px;
+  margin: 4px 0px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.toast.SUCCESS {
+  background-color: rgb(69, 165, 69);
+}
+
+.toast.INFO {
+  background-color: rgb(228, 228, 34);
+}
+
+.toast.ERROR {
+  background-color: rgb(202, 10, 10);
+}
+
+.toast.closing {
+  animation-name: toastClosing;
+  animation-duration: 1s;
+}
+
+@keyframes toastClosing {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.toast:hover {
+  border: 1px solid rgba(0,200,200,1);
+}
