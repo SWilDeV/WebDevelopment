@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>My TODOs</h1>
+
+    <input id="task-name" type="text" placeholder="Enter your task" />
+    <button type="button" id="create_new_task">Create Task</button>
+  </body>
+  <script type="module">
+    import { init } from "./app.js";
+    import { getID } from "./app.js";
+
+    const main = async () => {
+      let user = await init();
+      console.log(user);
+    };
+
+    getID();
+    //main();
+  </script>
+</html>
