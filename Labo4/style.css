@@ -1,0 +1,17 @@
+body{
+    background-color: beige;
+
+}
+
+.DeleteBtn{
+    background-color: rgb(241, 48, 48);
+}
+
+.updateBtn{
+    background-color: rgb(49, 202, 107);
+    visibility:hidden;
+}
+
+.show{
+    visibility:visible;
+}
