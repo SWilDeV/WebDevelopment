@@ -22,7 +22,6 @@ const renderTasks = () => {
 
     taskContainer.appendChild(divElement); //Ajouter au container
 
-
     //---------DELETE--------------
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("DeleteBtn");
@@ -35,8 +34,6 @@ const renderTasks = () => {
       renderTasks();
     };
 
-    
-
     //---------UPDATE--------------
     const updateBtn = document.createElement("button");
     updateBtn.classList.add("updateBtn");
@@ -48,45 +45,39 @@ const renderTasks = () => {
       const index = tasksList.findIndex((i) => i.id === task.id);
       tasksList[index] = UpdateTask;
       renderTasks();
+      updateBtn.classList.remove("show");
     };
 
-    divElement.appendChild(updateBtn);//Ajouter bouton Update
+    divElement.appendChild(updateBtn); //Ajouter bouton Update
     divElement.appendChild(deleteBtn); //Ajouter bouton delete
-
-
 
     //---------EXTRA STYLE--------------
     let InputSelector = document.querySelectorAll(".inputSelector");
     let UpdateBtnSelector = document.querySelectorAll(".updateBtn");
-    
-    InputSelector.forEach((inp,i) =>{
-      inp.onclick = () =>{
+
+    InputSelector.forEach((inp, i) => {
+      inp.onclick = () => {
         UpdateBtnSelector[i].classList.add("show");
-      }
-    })
-    UpdateBtnSelector.forEach((sel,i) =>{
-      sel.onclick = () =>{
-        UpdateBtnSelector[i].classList.remove("show");
-      }
-    })
+      };
+    });
 
   });
 };
 
 //----------------------------------INIT------------------------------------------
 export const init = async () => {
-  let user = JSON.parse(localStorage.getItem('user'));
+  let user = JSON.parse(localStorage.getItem("user"));
   if (!user) {
     user = await api.createUser();
     console.log(user);
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user));
   }
-  
+
   api.registerUser(user);
   const tasks = await api.getTask();
-  tasks.forEach(task =>{
+  tasks.forEach((task) => {
     tasksList.push(task);
-  })
+  });
   renderTasks();
 
   const newTaskBtn = document.querySelector("#create_Btn");
